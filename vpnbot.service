@@ -1,0 +1,15 @@
+[Unit]
+Description=VPN Telegram bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=vpnbot
+WorkingDirectory=/opt/vpn_bot
+ExecStart=/opt/vpn_bot/venv/bin/python main.py
+Restart=always
+RestartSec=5
+NoNewPrivileges=false
+
+[Install]
+WantedBy=multi-user.target
